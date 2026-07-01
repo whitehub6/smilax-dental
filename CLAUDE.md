@@ -85,7 +85,7 @@ is a CSS variant and is fine to keep.)
 - `variant-blue/` = full copy recolored teal->bright blue (`--primary-*` overrides + hex sweep),
   4-point sparkle eyebrow icon. Same layout/animations.
 - Legal pages: `privacy/terms/cookies/licenses/404.html` (hand-built, on-brand, all footer-linked).
-- Footer credit: "Crafted by RapidXAI" + "© 2026 Smilax Dental".
+- Footer credit: "Crafted by Blueoaks agency" + "© 2026 Smilax Dental".
 - GitHub: private repo `toprmrproducer/smilax-dental`.
 - Netlify: site `smilax-dental-blue.netlify.app` created but deploy BLOCKED (account credits exhausted).
 - `ONESHOT_PROMPT.md` = comprehensive prompt to regenerate this site from scratch with [PLACEHOLDERS].

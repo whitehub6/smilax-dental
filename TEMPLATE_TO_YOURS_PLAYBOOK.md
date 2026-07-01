@@ -66,7 +66,7 @@ deploy it. Work autonomously through every step and verify in a real browser bef
 [BOOKING_URL]      = scheduling link (Calendly etc.) for every primary CTA
 [ACCENT]           = primary brand color hex (the template's accent, or a new one)
 [INK_DARK]         = deep brand dark hex (for dark sections + body text)
-[CREDIT]           = footer maker credit, e.g. "Crafted by RapidXAI"
+[CREDIT]           = footer maker credit, e.g. "Crafted by Blueoaks agency"
 [IMAGE_TOOL]       = the image model/MCP to use (e.g. Magnific gpt-2, quality low, 1k). If none, ask me to connect one.
 [DEPLOY_TARGET]    = "GitHub Pages" (default) / "Netlify" / "Vercel"
 [GITHUB_OWNER]     = github account to push to
