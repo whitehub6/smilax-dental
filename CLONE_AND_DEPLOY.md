@@ -1,4 +1,4 @@
-# Lumora Dental — Clone & Deploy (the reliable one-shot)
+# Smilax Dental — Clone & Deploy (the reliable one-shot)
 
 > **READ THIS FIRST. This is not a "build" task. The finished website already exists in a public Git
 > repo. Your job is to CLONE it and DEPLOY it, byte-for-byte. Do NOT recreate it, do NOT redesign it,
@@ -10,8 +10,8 @@ Webflow IX2 runtime). It opens by double-clicking `index.html` or via `python3 -
 is **no build step**, no `npm install`, no dev server, no bundler. A `localhost:5173` (Vite) output is
 an automatic failure.
 
-**Source of truth (public):** `https://github.com/toprmrproducer/lumora-dental`
-**Live reference (what the result must look like):** `https://toprmrproducer.github.io/lumora-dental/`
+**Source of truth (public):** `https://github.com/toprmrproducer/smilax-dental`
+**Live reference (what the result must look like):** `https://toprmrproducer.github.io/smilax-dental/`
 
 The repo is fully self-contained: all 8 JS libs, ~186 images (including 37 AI-generated `gen_*.jpg`
 photos), both color variants (teal at root, blue in `variant-blue/`), and all legal pages are
@@ -22,7 +22,7 @@ card, so nothing ever shows a gray box, a red box, or a broken-image icon.
 
 All JS is plain and either a vendored library in `assets/js/` (jQuery, GSAP, the Webflow IX2 runtime)
 or a small inline `<script>` before `</body>` on each page (the "reveal engine v2" that fades sections
-in, the `lumoraLead` lead-form handler, and the image guard). There is no `app.js` and no build output.
+in, the `smilaxLead` lead-form handler, and the image guard). There is no `app.js` and no build output.
 
 ---
 
@@ -32,21 +32,21 @@ You need `git`. Pick the block for your OS. Replace nothing in the URL.
 
 **macOS / Linux (Terminal):**
 ```bash
-git clone https://github.com/toprmrproducer/lumora-dental.git
-cd lumora-dental
+git clone https://github.com/toprmrproducer/smilax-dental.git
+cd smilax-dental
 ```
 
 **Windows (PowerShell or CMD):**
 ```powershell
-git clone https://github.com/toprmrproducer/lumora-dental.git
-cd lumora-dental
+git clone https://github.com/toprmrproducer/smilax-dental.git
+cd smilax-dental
 ```
 
 **No git installed?** Download the ZIP instead and unzip it:
-- Browser: open `https://github.com/toprmrproducer/lumora-dental/archive/refs/heads/main.zip`, unzip,
-  and `cd` into the unzipped `lumora-dental-main` folder.
-- macOS/Linux one-liner: `curl -L -o lumora.zip https://github.com/toprmrproducer/lumora-dental/archive/refs/heads/main.zip && unzip lumora.zip && cd lumora-dental-main`
-- Windows PowerShell: `Invoke-WebRequest https://github.com/toprmrproducer/lumora-dental/archive/refs/heads/main.zip -OutFile lumora.zip; Expand-Archive lumora.zip -Force; cd lumora-dental-main\lumora-dental-main`
+- Browser: open `https://github.com/toprmrproducer/smilax-dental/archive/refs/heads/main.zip`, unzip,
+  and `cd` into the unzipped `smilax-dental-main` folder.
+- macOS/Linux one-liner: `curl -L -o smilax.zip https://github.com/toprmrproducer/smilax-dental/archive/refs/heads/main.zip && unzip smilax.zip && cd smilax-dental-main`
+- Windows PowerShell: `Invoke-WebRequest https://github.com/toprmrproducer/smilax-dental/archive/refs/heads/main.zip -OutFile smilax.zip; Expand-Archive smilax.zip -Force; cd smilax-dental-main\smilax-dental-main`
 
 After this you have the COMPLETE site on disk. Do not modify the structure.
 
@@ -81,7 +81,7 @@ photos load. The teal site is the root; the blue variant is at `/variant-blue/`.
 ## STEP 3 — Deploy it (choose ONE)
 
 ### Option A — GitHub Pages (free, recommended; needs a free GitHub account)
-1. On GitHub, **Fork** `toprmrproducer/lumora-dental` into your own account (button top-right), OR
+1. On GitHub, **Fork** `toprmrproducer/smilax-dental` into your own account (button top-right), OR
    create a new empty repo and push this code to it:
    ```bash
    # from inside the cloned folder, pointing at YOUR new empty repo:
@@ -111,19 +111,19 @@ photos load. The teal site is the root; the blue variant is at `/variant-blue/`.
 ## STEP 4 — Make it yours (optional re-skin — still no rebuild)
 
 Everything below is plain find-and-replace on the cloned files. The structure, animations, and layout
-stay exactly as-is. Do these edits in a code editor across all `.html` files (and `assets/css/lumora.css`
+stay exactly as-is. Do these edits in a code editor across all `.html` files (and `assets/css/smilax.css`
 for color). **Never** swap the stack or "modernize" — just change text, links, colors, and images.
 
-1. **Brand name:** find `Lumora Dental` (and standalone `Lumora`) across all `.html` → your business name.
-2. **Logo:** replace `assets/img/lumora-logo.svg` and `assets/img/lumora-logo-dark.svg` (footer) with
+1. **Brand name:** find `Smilax Dental` (and standalone `Smilax`) across all `.html` → your business name.
+2. **Logo:** replace `assets/img/smilax-logo.svg` and `assets/img/smilax-logo-dark.svg` (footer) with
    your own SVG/PNG of the same dimensions. Replace `assets/img/favicon.svg` + `webclip.png` too.
 3. **Booking CTA:** find `https://calendly.com/shreyasrajsony11` (×6) → your Calendly/booking URL.
 4. **Phone / WhatsApp:** find `9307512816` (and `9193007512816` if present) → your number (the lead
-   form opens a prefilled WhatsApp on submit — handled by the inline `lumoraLead` script before
+   form opens a prefilled WhatsApp on submit — handled by the inline `smilaxLead` script before
    `</body>` on each index page).
-5. **Email:** find `hello@lumoradental.com` → your email.
+5. **Email:** find `hello@smilaxdental.com` → your email.
 6. **Copy:** edit headings/paragraphs in the `.html` files directly. They're readable, plain HTML.
-7. **Color:** the theme is driven by CSS custom properties. In `assets/css/lumora.css`, change the
+7. **Color:** the theme is driven by CSS custom properties. In `assets/css/smilax.css`, change the
    `--primary-*` values (and the appended hex overrides) — the whole site recolors. The `variant-blue/`
    folder is a worked example of exactly this (teal → bright blue).
 8. **Images:** to swap a photo, drop a replacement at the SAME path/filename in `assets/img/`

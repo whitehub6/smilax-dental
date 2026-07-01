@@ -1,4 +1,4 @@
-# Lumora Dental — project notes
+# Smilax Dental — project notes
 
 A premium dental clinic website. **Origin:** a de-branded, rebuilt version of a Webflow HTML
 template (originally "Smilifye" by author "Flowfye"). Every Webflow/template trace has been
@@ -7,7 +7,7 @@ an original build.
 
 ## Handoff / reproduction (preferred method — 14 Jun 2026)
 The repo is **public** and **the source of truth**. The reliable one-shot is now **`CLONE_AND_DEPLOY.md`**:
-it tells any agent to `git clone https://github.com/toprmrproducer/lumora-dental`, run it, and deploy it
+it tells any agent to `git clone https://github.com/toprmrproducer/smilax-dental`, run it, and deploy it
 (GitHub Pages / Netlify drop / Vercel) — **no rebuild, no framework, no image generation** (all 37 AI
 `gen_*.jpg` photos are committed, so a clean clone always looks finished). This replaces the old
 embedded-code `ONESHOT_PROMPT.md`, which executing agents kept "improving" into a Vite/React app with
@@ -22,17 +22,17 @@ deletes images during a re-skin, nothing ever shows a broken/gray/red box — it
 ## Structure
 - `index.html` — home (was `Dental.html`)
 - `about.html`, `service.html`, `blog.html` — main pages
-- `privacy.html`, `terms.html` — hand-built legal pages (share `assets/css/lumora.css` + inline styles)
-- `assets/css/lumora.css` — the (renamed) Webflow design system; all `url()`s point to `../img/`
+- `privacy.html`, `terms.html` — hand-built legal pages (share `assets/css/smilax.css` + inline styles)
+- `assets/css/smilax.css` — the (renamed) Webflow design system; all `url()`s point to `../img/`
 - `assets/js/` — Webflow IX2 runtime (`webflow.*.js`), `jquery-3.5.1.min.js`, GSAP (`gsap.min.js`,
   `ScrollTrigger.min.js`, `SplitText.min.js`). **Do not delete** — these drive all 39 interactions.
-- `assets/img/` — all photos + the new brand assets: `lumora-logo.svg`, `lumora-logo-dark.svg`
+- `assets/img/` — all photos + the new brand assets: `smilax-logo.svg`, `smilax-logo-dark.svg`
   (footer), `favicon.svg`, `webclip.png`. ~149 files (incl. responsive `-p-500/800/1080…` variants).
 - `.bak/` — original Webflow exports, kept for reference.
 
 ## Brand
-- Name: **Lumora Dental**. Accent teal `#24a3b1`; deep teal `#011f23` / `#022f34`. Font: Sora.
-- Email: `hello@lumoradental.com` (placeholder). Phone in footer is template placeholder.
+- Name: **Smilax Dental**. Accent teal `#24a3b1`; deep teal `#011f23` / `#022f34`. Font: Sora.
+- Email: `hello@smilaxdental.com` (placeholder). Phone in footer is template placeholder.
 
 ## Wiring
 - Nav/footer links are local `.html` files. All "Book/Get Appointment" CTAs (×6) →
@@ -44,7 +44,7 @@ deletes images during a re-skin, nothing ever shows a broken/gray/red box — it
 - **IMPORTANT — IX2 reveals don't fire on the export.** Webflow baked every reveal element's hidden
   state into inline styles (`opacity:0` + `transform:translateY` + `filter:blur`), to be animated by
   IX2 — but the exported IX2 data never applies them, so without a fix all that text/imagery stays
-  invisible/blurred. Fix = the **"Lumora reveal engine v2"** `<script>` before `</body>` on every page:
+  invisible/blurred. Fix = the **"Smilax reveal engine v2"** `<script>` before `</body>` on every page:
   it finds `[data-w-id][style*="opacity:0"]` (outside the nav) and fades+slides them in via GSAP
   ScrollTrigger, with a 2.6s safety net that force-shows anything still hidden. **No blur** is used.
 - All inline `filter:blur(...)` has been stripped from the HTML (it was leaving images permanently
@@ -54,7 +54,7 @@ deletes images during a re-skin, nothing ever shows a broken/gray/red box — it
 
 ## Run locally
 ```
-cd "~/Library/Mobile Documents/com~apple~CloudDocs/website/lumora-dental"
+cd "~/Library/Mobile Documents/com~apple~CloudDocs/website/smilax-dental"
 python3 -m http.server 8123 --bind 127.0.0.1
 # open http://127.0.0.1:8123/index.html
 ```
@@ -78,23 +78,23 @@ is a CSS variant and is fine to keep.)
 ## TODO / open
 - AI image regeneration: DONE (see "AI imagery" above; 32 `gen_*.jpg`). Not yet regenerated:
   decorative awards/job/location/success images + CSS mobile-hero — optional.
-- LIVE on GitHub Pages: https://toprmrproducer.github.io/lumora-dental/ (teal) and /variant-blue/ (blue). Repo is public.
+- LIVE on GitHub Pages: https://toprmrproducer.github.io/smilax-dental/ (teal) and /variant-blue/ (blue). Repo is public.
 - Optional polish: real clinic phone number, real OG image, real social profile URLs (currently `#`).
 
 ## Variants, legal, deploy, prompt (added 14 Jun 2026)
 - `variant-blue/` = full copy recolored teal->bright blue (`--primary-*` overrides + hex sweep),
   4-point sparkle eyebrow icon. Same layout/animations.
 - Legal pages: `privacy/terms/cookies/licenses/404.html` (hand-built, on-brand, all footer-linked).
-- Footer credit: "Crafted by RapidXAI" + "© 2026 Lumora Dental".
-- GitHub: private repo `toprmrproducer/lumora-dental`.
-- Netlify: site `lumora-dental-blue.netlify.app` created but deploy BLOCKED (account credits exhausted).
+- Footer credit: "Crafted by RapidXAI" + "© 2026 Smilax Dental".
+- GitHub: private repo `toprmrproducer/smilax-dental`.
+- Netlify: site `smilax-dental-blue.netlify.app` created but deploy BLOCKED (account credits exhausted).
 - `ONESHOT_PROMPT.md` = comprehensive prompt to regenerate this site from scratch with [PLACEHOLDERS].
 
 ## Conversion + content updates (14 Jun 2026)
 - Phone is `+91 93007512816` everywhere (display + tel: + wa.me 9193007512816).
 - Hero **lead-capture form** (`.lead-form_card`, "Book a visit", name+phone) on both variants. On
   submit it opens a prefilled WhatsApp to the clinic and shows a success state. ALWAYS visible (not
-  gated by reveal). Handler `leadSubmit()` injected before </body> on index pages; CSS in lumora.css.
+  gated by reveal). Handler `leadSubmit()` injected before </body> on index pages; CSS in smilax.css.
 - Closing CTA (`.section_cta`) now has a photo background (`gen_about-hero-image.jpg`) + dark overlay
   (teal vs blue per variant); footer has an accent top-border. Fixes the "bland footer".
 - All em dashes removed from copy/titles (titles use `|`).

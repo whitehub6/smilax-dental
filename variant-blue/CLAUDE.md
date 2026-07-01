@@ -1,4 +1,4 @@
-# Lumora Dental — project notes
+# Smilax Dental — project notes
 
 A premium dental clinic website. **Origin:** a de-branded, rebuilt version of a Webflow HTML
 template (originally "Smilifye" by author "Flowfye"). Every Webflow/template trace has been
@@ -8,17 +8,17 @@ an original build.
 ## Structure
 - `index.html` — home (was `Dental.html`)
 - `about.html`, `service.html`, `blog.html` — main pages
-- `privacy.html`, `terms.html` — hand-built legal pages (share `assets/css/lumora.css` + inline styles)
-- `assets/css/lumora.css` — the (renamed) Webflow design system; all `url()`s point to `../img/`
+- `privacy.html`, `terms.html` — hand-built legal pages (share `assets/css/smilax.css` + inline styles)
+- `assets/css/smilax.css` — the (renamed) Webflow design system; all `url()`s point to `../img/`
 - `assets/js/` — Webflow IX2 runtime (`webflow.*.js`), `jquery-3.5.1.min.js`, GSAP (`gsap.min.js`,
   `ScrollTrigger.min.js`, `SplitText.min.js`). **Do not delete** — these drive all 39 interactions.
-- `assets/img/` — all photos + the new brand assets: `lumora-logo.svg`, `lumora-logo-dark.svg`
+- `assets/img/` — all photos + the new brand assets: `smilax-logo.svg`, `smilax-logo-dark.svg`
   (footer), `favicon.svg`, `webclip.png`. ~149 files (incl. responsive `-p-500/800/1080…` variants).
 - `.bak/` — original Webflow exports, kept for reference.
 
 ## Brand
-- Name: **Lumora Dental**. Accent teal `#24a3b1`; deep teal `#011f23` / `#022f34`. Font: Sora.
-- Email: `hello@lumoradental.com` (placeholder). Phone in footer is template placeholder.
+- Name: **Smilax Dental**. Accent teal `#24a3b1`; deep teal `#011f23` / `#022f34`. Font: Sora.
+- Email: `hello@smilaxdental.com` (placeholder). Phone in footer is template placeholder.
 
 ## Wiring
 - Nav/footer links are local `.html` files. All "Book/Get Appointment" CTAs (×6) →
@@ -30,7 +30,7 @@ an original build.
 - **IMPORTANT — IX2 reveals don't fire on the export.** Webflow baked every reveal element's hidden
   state into inline styles (`opacity:0` + `transform:translateY` + `filter:blur`), to be animated by
   IX2 — but the exported IX2 data never applies them, so without a fix all that text/imagery stays
-  invisible/blurred. Fix = the **"Lumora reveal engine v2"** `<script>` before `</body>` on every page:
+  invisible/blurred. Fix = the **"Smilax reveal engine v2"** `<script>` before `</body>` on every page:
   it finds `[data-w-id][style*="opacity:0"]` (outside the nav) and fades+slides them in via GSAP
   ScrollTrigger, with a 2.6s safety net that force-shows anything still hidden. **No blur** is used.
 - All inline `filter:blur(...)` has been stripped from the HTML (it was leaving images permanently
@@ -40,7 +40,7 @@ an original build.
 
 ## Run locally
 ```
-cd "~/Library/Mobile Documents/com~apple~CloudDocs/website/lumora-dental"
+cd "~/Library/Mobile Documents/com~apple~CloudDocs/website/smilax-dental"
 python3 -m http.server 8123 --bind 127.0.0.1
 # open http://127.0.0.1:8123/index.html
 ```
